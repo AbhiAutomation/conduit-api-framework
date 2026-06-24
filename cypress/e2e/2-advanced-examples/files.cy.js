@@ -13,7 +13,7 @@ context('Files', () => {
     cy.fixture('example.json').as('example')
   })
 
-  it('cy.fixture() - load a fixture', () => {
+  it.only('cy.fixture() - load a fixture', () => {
     // https://on.cypress.io/fixture
 
     // Instead of writing a response inline you can

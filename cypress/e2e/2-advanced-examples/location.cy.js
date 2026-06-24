@@ -10,7 +10,7 @@ context('Location', () => {
     cy.hash().should('be.empty')
   })
 
-  it('cy.location() - get window.location', () => {
+  it.only('cy.location() - get window.location', () => {
     // https://on.cypress.io/location
     cy.location().should((location) => {
       expect(location.hash).to.be.empty

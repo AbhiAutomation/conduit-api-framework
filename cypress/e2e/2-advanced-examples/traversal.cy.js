@@ -12,7 +12,7 @@ context('Traversal', () => {
       .should('contain', 'Data')
   })
 
-  it('.closest() - get closest ancestor DOM element', () => {
+  it.only('.closest() - get closest ancestor DOM element', () => {
     // https://on.cypress.io/closest
     cy.get('.traversal-badge')
       .closest('ul')

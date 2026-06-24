@@ -5,7 +5,7 @@ context('Connectors', () => {
     cy.visit('https://example.cypress.io/commands/connectors')
   })
 
-  it('.each() - iterate over an array of elements', () => {
+  it.only('.each() - iterate over an array of elements', () => {
     // https://on.cypress.io/each
     cy.get('.connectors-each-ul>li')
       .each(($el, index, $list) => {

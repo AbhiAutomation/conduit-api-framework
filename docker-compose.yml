@@ -1,0 +1,8 @@
+services:
+   cypress-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cypress-tests-1
+    volumes:
+      - ./cypress/reports:/app/cypress/reports

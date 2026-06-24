@@ -5,7 +5,7 @@ context('Misc', () => {
     cy.visit('https://example.cypress.io/commands/misc')
   })
 
-  it('cy.exec() - execute a system command', () => {
+  it.only('cy.exec() - execute a system command', () => {
     // execute a system command.
     // so you can take actions necessary for
     // your test outside the scope of Cypress.

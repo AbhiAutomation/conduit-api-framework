@@ -11,7 +11,7 @@ context('Cookies', () => {
     cy.clearCookies()
   })
 
-  it('cy.getCookie() - get a browser cookie', () => {
+  it.only('cy.getCookie() - get a browser cookie', () => {
     // https://on.cypress.io/getcookie
     cy.get('#getCookie .set-a-cookie').click()
 

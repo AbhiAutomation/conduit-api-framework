@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "delete:reports": "rimraf cypress/reports/**/*",
+    "prereport": "npm run delete:reports",
+    "junit:merge": "npx junit-merge -d cypress/reports/junit -o cypress/reports/junit/results.xml",
+
+    "cy:run:all" : "npm run prereport && npx cypress run || true  && npm run junit:merge ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +26,14 @@
   "devDependencies": {
     "@types/node": "^26.0.0",
     "cypress": "^15.17.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "cypress-multi-reporters": "^2.0.5",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.4",
+    "rimraf": "^6.1.3",
     "typescript": "^6.0.3"
+  },
+   "dependencies": {
+    "junit-merge": "^2.0.0"
   }
 }

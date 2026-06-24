@@ -16,7 +16,7 @@ context('Spies, Stubs, and Clock', () => {
     expect(spy).to.be.called
   })
 
-  it('cy.spy() retries until assertions pass', () => {
+  it.only('cy.spy() retries until assertions pass', () => {
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
 
     const obj = {

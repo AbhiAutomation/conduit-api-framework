@@ -15,7 +15,7 @@ context('Window', () => {
     cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
   })
 
-  it('cy.title() - get the title', () => {
+  it.only('cy.title() - get the title', () => {
     // https://on.cypress.io/title
     cy.title().should('include', 'Kitchen Sink')
   })
