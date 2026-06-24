@@ -1,0 +1,39 @@
+name: Cypress Docker Tests
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+
+  docker-cypress:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t conduit-api .
+
+      - name: Execute Cypress Container
+        run: |
+          docker run --name cypress-container conduit-api
+
+      - name: Copy Reports From Container
+        if: always()
+        run: |
+          docker cp cypress-container:/app/mochawesome-report ./mochawesome-report
+
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: mochawesome-report
